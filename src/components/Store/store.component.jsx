@@ -113,7 +113,6 @@ class Store extends Component {
   render() {
     const Items = this.state.CurrentItemsList;
     let Elements;
-    let props = this.props;
     if (Items[0]) {
       Elements = Items.map(item => {
         if (item === "end") {

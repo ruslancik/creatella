@@ -7,7 +7,7 @@ import {ItemBlock, ItemFace, ItemDetails, ItemDetailsContainer} from './item.sty
 class Item extends React.Component {
  
   render() {
-    let {face, price, size, id ,date } = this.props;
+    let {face, price, size,date } = this.props;
     return (
       <ItemBlock>
         <ItemDetails>{DateFormatter(date)} </ItemDetails>
