@@ -16,27 +16,17 @@ import {
 
 let CurrentItems = [];
 let NextItems = [];
-let ads = [];
 
 class Store extends Component {
 
     state = {
-      CurrentItemsList: [],
-      NextItems: [],
+      CurrentItemsState: [],
+      NextItemsState: [],
       endOfResults: false
     };
   
 
-  random = () => {
-    let number = Math.floor(Math.random() * 1000);
-    while (ads.indexOf(number) !== -1) {
-      number = Math.floor(Math.random() * 1000);
-    }
-    ads.push(number);
-    return number;
-  }
-
-  
+   
   fetchData = (sortMode, nextPage, current, newSearch) => {
     if (newSearch) {
       this.props.reset();
@@ -66,16 +56,15 @@ class Store extends Component {
             this.setState({ endOfResults: true });
           }
           if (current) {
-            this.setState({ CurrentItemsList: CurrentItems });
+            this.setState({ CurrentItemsState: CurrentItems });
           } else if (response.data[1]) {
             NextItems.unshift({
               class: "ad",
-              src: "http://localhost:3000/ads/?r=" + this.random()
+              src: "http://localhost:3000/ads/?r=" + Math.floor(Math.random() * 1000)
             });
-            this.setState({ NextItems: NextItems });
+            this.setState({ NextItemsState: NextItems });
           }
           this.props.toggleLoading(false);
-          document.body.style.cursor = "initial";
         })
         .catch(err => console.log(err));
     }
@@ -111,7 +100,7 @@ class Store extends Component {
   }
 
   render() {
-    const Items = this.state.CurrentItemsList;
+    const Items = this.state.CurrentItemsState;
     let Elements;
     if (Items[0]) {
       Elements = Items.map(item => {
