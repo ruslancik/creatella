@@ -10,8 +10,8 @@ Please read the instructions and FAQ below before beginning.
 Features
 ----
 
-- products are displayed in a grid.
-- give the user an option to sort the products in ascending order. Can sort by "size", "price" or "id". The products list should be reloaded when a new sorting option is chosen.
+- products are displayed in a grid. `:heavy_check_mark:`
+- give the user an option to sort the products in ascending order. Can sort by "size", "price" or "id". The products list should be reloaded when a new sorting option is chosen. :heavy_check_mark:
 - each product has :
   - a "size" field, which is the font-size (in pixels). We should display the faces in their correct size, to give customers a realistic impression of what they're buying.
   - a "price" field, in cents. This should be formatted as dollars like `$3.51`.

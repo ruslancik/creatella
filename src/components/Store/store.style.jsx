@@ -29,4 +29,6 @@ export const EndCtlg = styled.h1`
     width: 100%;
     text-align: center;
     color: #FFD700;
+    margin: 0 auto;
+    grid-column: 1/-1;
 `
