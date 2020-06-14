@@ -40,7 +40,7 @@ class Store extends Component {
 
     if (!this.state.endOfResults) {
       axios
-        .get("http://localhost:3000/products?_page=" + nextPage + "&_limit=20&_sort=" + sortMode)
+        .get("http://localhost:3001/products?_page=" + nextPage + "&_limit=20&_sort=" + sortMode)
         .then(response => {
           if (response.data[1]) {
             response.data.forEach(element => {
@@ -60,7 +60,7 @@ class Store extends Component {
           } else if (response.data[1]) {
             NextItems.unshift({
               class: "ad",
-              src: "http://localhost:3000/ads/?r=" + Math.floor(Math.random() * 1000)
+              src: "http://localhost:3001/ads/?r=" + Math.floor(Math.random() * 1000)
             });
             this.setState({ NextItemsState: NextItems });
           }
